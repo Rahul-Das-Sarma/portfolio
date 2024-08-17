@@ -8,7 +8,8 @@ const Header = (props: Props) => {
   return (
     <div className="p-3 flex justify-between">
       <div className="flex items-center">
-        <MdWbSunny color="yellow" /> <h1 className="ml-2 text-lg">RDS</h1>
+        <MdWbSunny color="yellow" />{" "}
+        <h1 className="ml-2 text-lg">Hi! I am Rahul Das Sarma</h1>
       </div>
       <ModeToggle />
     </div>

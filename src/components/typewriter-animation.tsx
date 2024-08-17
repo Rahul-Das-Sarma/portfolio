@@ -1,11 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 
 const TypewriterEffect = () => {
-  const texts = ["Hello, World!", "Welcome to my website!", "Enjoy your stay!"];
+  const texts = useMemo(
+    () => [
+      "Welcome to my portfolio website!",
+      "I am happy that you are here.",
+      "Please check my projects and my tech stack.",
+      "If you think I can be of any help",
+      "Please lets connect.",
+      "I would love to connect with you.",
+      "Happy Surfing!",
+    ],
+    []
+  );
   const typingSpeed = 100; // Speed of typing in ms
   const deletingSpeed = 50; // Speed of deleting in ms
   const delayBeforeDeleting = 1500; // Delay before starting to delete in ms
-  const delayBeforeTypingNext = 500; // Delay before starting to type the next text in ms
+  // const delayBeforeTypingNext = 500; // Delay before starting to type the next text in ms
 
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
