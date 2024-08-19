@@ -2,13 +2,15 @@ import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import { Sun } from "lucide-react";
+import { Moon, Sun } from "lucide-react";
+import { useTheme } from "next-themes";
 
 const SolarSystem: React.FC = () => {
   // Use animation controls for each orbit
   const controls1 = useAnimation();
   const controls2 = useAnimation();
   const controls3 = useAnimation();
+  const { theme } = useTheme();
 
   const createOrbitVariants = (duration: number) => ({
     rotate: {
@@ -40,7 +42,13 @@ const SolarSystem: React.FC = () => {
     <div className="flex justify-center items-center h-screen">
       {/* Sun */}
       <motion.div className="relative">
-        <Sun size={80} color="gold" />
+        {/* <Sun size={80} color="gold" /> */}
+        {theme === "light" ? (
+          <Sun size={80} color="gold" />
+        ) : (
+          <Moon size={80} />
+        )}
+        {/* <Sun */}
 
         {/* First Orbit */}
         <motion.div
@@ -65,7 +73,10 @@ const SolarSystem: React.FC = () => {
           onHoverStart={() => handleHoverStart(controls1)}
           onHoverEnd={() => handleHoverEnd(controls1)}
         >
-          <FaGithub size={30} color="#333" className="ml-[170px]" />
+          <FaGithub
+            size={30}
+            className="ml-[170px] dark:text-white text:black"
+          />
         </motion.div>
 
         {/* Second Orbit */}
@@ -91,7 +102,11 @@ const SolarSystem: React.FC = () => {
           // onHoverStart={() => handleHoverStart(controls2)}
           // onHoverEnd={() => handleHoverEnd(controls2)}
         >
-          <FaXTwitter size={30} color="black" className="ml-[270px]" />
+          <FaXTwitter
+            size={30}
+            // color="black dark:white"
+            className="ml-[270px] dark:text-white text:black"
+          />
         </motion.div>
 
         {/* Third Orbit */}
