@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import useWindowSize from "@/hooks/useWIndowSize";
 
 import Banner from "@/components/banner";
+import { MarqueeDemo } from "@/components/marquee";
 
 export default function Home() {
   const { width, height } = useWindowSize();
@@ -12,6 +13,7 @@ export default function Home() {
       <Header />
       {/* Content */}
       <Banner />
+      <MarqueeDemo />
     </div>
   );
 }
