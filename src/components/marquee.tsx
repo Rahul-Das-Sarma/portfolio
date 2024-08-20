@@ -41,7 +41,7 @@ const reviews = [
   { name: "Next JS", img: <RiNextjsFill size={50} /> },
   {
     name: "Kubernetes",
-    img: <SiKubernetes size={50} />,
+    img: <SiKubernetes size={50} color="#3970e4 " />,
   },
   {
     name: "Mongodb",
