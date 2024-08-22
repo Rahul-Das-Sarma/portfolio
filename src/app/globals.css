@@ -12,6 +12,20 @@
   }
 }
 
+@keyframes border-progress {
+  from {
+    border-image-source: linear-gradient(90deg, #3b82f6 0%, transparent 100%);
+  }
+  to {
+    border-image-source: linear-gradient(90deg, #3b82f6 100%, transparent 0%);
+  }
+}
+
+.animate-border-progress {
+  animation: border-progress 0.5s forwards;
+}
+
+
 .animate-blink {
   animation: blink 1s step-end infinite;
 }

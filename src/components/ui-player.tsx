@@ -1,26 +1,58 @@
 import React from "react";
 
 import { Dock, DockIcon } from "@/components/magicui/dock";
-
+import { GrChapterNext } from "react-icons/gr";
+import { GrChapterPrevious } from "react-icons/gr";
+import { MdOutlineMenuBook } from "react-icons/md";
+import PopupMenu from "./popup-menu";
 export type IconProps = React.HTMLAttributes<SVGElement>;
 
 export function UiPlayer() {
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  const menuRef = React.useRef<HTMLDivElement>(null);
+
+  // Function to handle outside click
+  const handleClickOutside = (event: MouseEvent) => {
+    if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+      setIsOpen(false);
+    }
+  };
+
+  React.useEffect(() => {
+    // Add event listener to detect outside clicks
+    document.addEventListener("mousedown", handleClickOutside);
+
+    // Clean up the event listener when the component is unmounted or isOpen changes
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen]);
+
   return (
     <div className="relative">
-      <Dock magnification={60} distance={100}>
-        <DockIcon className="bg-black/10 dark:bg-white/10 p-3">
-          <Icons.gitHub className="size-full" />
-        </DockIcon>
-        <DockIcon className="bg-black/10 dark:bg-white/10 p-3">
-          <Icons.googleDrive className="size-full" />
-        </DockIcon>
-        <DockIcon className="bg-black/10 dark:bg-white/10 p-3">
-          <Icons.notion className="size-full" />
-        </DockIcon>
-        <DockIcon className="bg-black/10 dark:bg-white/10 p-3">
-          <Icons.whatsapp className="size-full" />
-        </DockIcon>
-      </Dock>
+      {isOpen && (
+        <div ref={menuRef} className="absolute -top-[280px]">
+          <PopupMenu />
+        </div>
+      )}
+      <div className="relative">
+        <Dock magnification={60} distance={100}>
+          <DockIcon className="bg-black/10 dark:bg-white/10 p-3">
+            <GrChapterPrevious className="size-full" />
+          </DockIcon>
+          <DockIcon className="bg-black/10 dark:bg-white/10 p-3 relative">
+            <MdOutlineMenuBook
+              className="size-full"
+              onClick={() => setIsOpen((prev) => !prev)}
+            />
+          </DockIcon>
+
+          <DockIcon className="bg-black/10 dark:bg-white/10 p-3">
+            <GrChapterNext className="size-full" />
+          </DockIcon>
+        </Dock>
+      </div>
     </div>
   );
 }
