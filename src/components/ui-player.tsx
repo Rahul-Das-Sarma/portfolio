@@ -1,5 +1,5 @@
 import React from "react";
-
+import { AnimatePresence } from "framer-motion";
 import { Dock, DockIcon } from "@/components/magicui/dock";
 import { GrChapterNext } from "react-icons/gr";
 import { GrChapterPrevious } from "react-icons/gr";
@@ -31,11 +31,13 @@ export function UiPlayer() {
 
   return (
     <div className="relative">
-      {isOpen && (
-        <div ref={menuRef} className="absolute -top-[280px]">
-          <PopupMenu />
-        </div>
-      )}
+      <AnimatePresence>
+        {isOpen && (
+          <div ref={menuRef} className="absolute -top-[280px]">
+            <PopupMenu />
+          </div>
+        )}
+      </AnimatePresence>
       <div className="relative">
         <Dock magnification={60} distance={100}>
           <DockIcon className="bg-black/10 dark:bg-white/10 p-3">

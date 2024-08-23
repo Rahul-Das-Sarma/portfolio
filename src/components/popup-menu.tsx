@@ -12,6 +12,7 @@ const PopupMenu = () => {
         stiffness: 260,
         damping: 20,
       }}
+      exit={{ rotate: -360, scale: 0 }}
       className=" h-64 w-64 bg-white dark:bg-slate-800 rounded-lg shadow-xl"
     >
       <div className="p-3">
