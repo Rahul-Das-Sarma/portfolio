@@ -5,11 +5,13 @@ import { GrChapterNext } from "react-icons/gr";
 import { GrChapterPrevious } from "react-icons/gr";
 import { MdOutlineMenuBook } from "react-icons/md";
 import PopupMenu from "./popup-menu";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 export type IconProps = React.HTMLAttributes<SVGElement>;
 
 export function UiPlayer() {
   const [isOpen, setIsOpen] = React.useState(false);
-
+  const router = useRouter();
   const menuRef = React.useRef<HTMLDivElement>(null);
 
   // Function to handle outside click
@@ -51,7 +53,10 @@ export function UiPlayer() {
           </DockIcon>
 
           <DockIcon className="bg-black/10 dark:bg-white/10 p-3">
-            <GrChapterNext className="size-full" />
+            <GrChapterNext
+              onClick={() => router.push("/tech-skills")}
+              className="size-full"
+            />
           </DockIcon>
         </Dock>
       </div>
