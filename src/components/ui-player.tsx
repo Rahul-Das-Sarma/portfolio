@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { AnimatePresence } from "framer-motion";
 import { Dock, DockIcon } from "@/components/magicui/dock";
@@ -8,9 +9,11 @@ import PopupMenu from "./popup-menu";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 export type IconProps = React.HTMLAttributes<SVGElement>;
+const routes = ["/tech-skills", "/projects", "/tech-skills"];
 
 export function UiPlayer() {
   const [isOpen, setIsOpen] = React.useState(false);
+  const [counter, setCounter] = React.useState(0);
   const router = useRouter();
   const menuRef = React.useRef<HTMLDivElement>(null);
 
@@ -43,7 +46,13 @@ export function UiPlayer() {
       <div className="relative">
         <Dock magnification={60} distance={100}>
           <DockIcon className="bg-black/10 dark:bg-white/10 p-3">
-            <GrChapterPrevious className="size-full" />
+            <GrChapterPrevious
+              className="size-full"
+              onClick={() => {
+                router.back();
+                setCounter((prev) => prev--);
+              }}
+            />
           </DockIcon>
           <DockIcon className="bg-black/10 dark:bg-white/10 p-3 relative">
             <MdOutlineMenuBook
@@ -54,7 +63,10 @@ export function UiPlayer() {
 
           <DockIcon className="bg-black/10 dark:bg-white/10 p-3">
             <GrChapterNext
-              onClick={() => router.push("/tech-skills")}
+              onClick={() => {
+                router.push(routes[counter]);
+                setCounter((prev) => prev++);
+              }}
               className="size-full"
             />
           </DockIcon>

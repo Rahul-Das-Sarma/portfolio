@@ -3,6 +3,7 @@ import { Play } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
+import { UiPlayer } from "@/components/ui-player";
 
 const fontSans = Play({ weight: "400", subsets: ["latin"] });
 
@@ -19,7 +20,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head />
-      <body className={fontSans.className}>
+      <body
+        className={cn(fontSans.className, "relative overflow-hidden h-[100vh]")}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -27,6 +30,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {children}
+          <div className="absolute left-[45%] bottom-10">
+            <UiPlayer /> {/* Add UiPlayer here */}
+          </div>
         </ThemeProvider>
       </body>
     </html>

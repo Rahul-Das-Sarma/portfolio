@@ -19,9 +19,6 @@ export default function Home() {
       {/* Content */}
       <Banner />
       {/* <MarqueeDemo /> */}
-      <div className="absolute left-[45%] bottom-10">
-        <UiPlayer />
-      </div>
     </motion.div>
   );
 }
