@@ -64,7 +64,7 @@ const TechSkill: React.FC = () => {
       ref={containerRef}
       className="relative h-[100vh] w-full overflow-hidden rounded-lg bg-background p-20 md:shadow-xl"
     >
-      <h1 className="text-lg font-bold">Technology Stack</h1>
+      <h1 className="text-lg font-bold">Technology Stack (Draggable Cards)</h1>
 
       <div className="flex flex-wrap m-3">
         {arrObj.map((ele, index) => (

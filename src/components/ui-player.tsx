@@ -13,7 +13,7 @@ export function UiPlayer() {
   const pathname = usePathname();
   const menuRef = React.useRef<HTMLDivElement>(null);
 
-  const routes = ["/tech-skills", "/projects", "/about"];
+  const routes = ["/projects", "/tech-skills", "/about"];
 
   // Function to handle outside click
   const handleClickOutside = (event: MouseEvent) => {
