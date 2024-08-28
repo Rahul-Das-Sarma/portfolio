@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import TypewriterEffect from "./typewriter-animation";
 
 import SolarSystem from "./solar-system";
+import { OrbitingCirclesDemo } from "./circle";
 
 type Props = {};
 
@@ -38,8 +39,9 @@ const Banner = (props: Props) => {
           management solutions.
         </p>
       </div>
-      <div className=" absolute right-44">
-        <SolarSystem />
+      <div className=" absolute right-20">
+        {/* <SolarSystem /> */}
+        <OrbitingCirclesDemo />
       </div>
       <AnimatedGridPattern
         numSquares={30}

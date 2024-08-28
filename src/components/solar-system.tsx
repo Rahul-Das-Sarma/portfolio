@@ -4,6 +4,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
+import Link from "next/link";
 
 const SolarSystem: React.FC = () => {
   // Use animation controls for each orbit
@@ -73,10 +74,12 @@ const SolarSystem: React.FC = () => {
           onHoverStart={() => handleHoverStart(controls1)}
           onHoverEnd={() => handleHoverEnd(controls1)}
         >
-          <FaGithub
-            size={30}
-            className="ml-[170px] dark:text-white text:black"
-          />
+          <Link href={"https://github.com/Rahul-Das-Sarma"} target="_blank">
+            <FaGithub
+              size={30}
+              className="ml-[170px] dark:text-white text:black"
+            />
+          </Link>
         </motion.div>
 
         {/* Second Orbit */}
@@ -132,7 +135,9 @@ const SolarSystem: React.FC = () => {
           // onHoverStart={() => handleHoverStart(controls3)}
           // onHoverEnd={() => handleHoverEnd(controls3)}
         >
-          <FaLinkedin size={30} color="#0077B5" className="ml-[370px]" />
+          <Link href={"https://github.com/Rahul-Das-Sarma"} target="_blank">
+            <FaLinkedin size={30} color="#0077B5" className="ml-[370px]" />
+          </Link>
         </motion.div>
       </motion.div>
     </div>

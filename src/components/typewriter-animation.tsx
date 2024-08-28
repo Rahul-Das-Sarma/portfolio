@@ -7,7 +7,7 @@ const TypewriterEffect = () => {
       "I am happy that you are here.",
       "Please check my projects and my tech stack.",
       "If you think I can be of any help",
-      "Please lets connect.",
+      "lets connect.",
       "I would love to connect with you.",
       "Happy Surfing!",
     ],

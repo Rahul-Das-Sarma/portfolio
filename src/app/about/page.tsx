@@ -4,6 +4,7 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import React from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 type Props = {};
 
 const About = (props: Props) => {
@@ -53,7 +54,13 @@ const About = (props: Props) => {
                   exit={{ rotate: -360, scale: 0 }}
                   className="flex justify-center items-center h-44 w-40"
                 >
-                  <FaLinkedinIn size={50} />
+                  {" "}
+                  <Link
+                    href={"https://www.linkedin.com/in/rahuldsofficial/"}
+                    target="_blank"
+                  >
+                    <FaLinkedinIn size={50} />
+                  </Link>
                 </motion.div>
                 <motion.div
                   initial={{ scale: 0 }}
@@ -67,7 +74,12 @@ const About = (props: Props) => {
                   exit={{ rotate: -360, scale: 0 }}
                   className="flex justify-center items-center h-44 w-40"
                 >
-                  <FaXTwitter size={50} />
+                  <Link
+                    href={"https://twitter.com/rahul_dofficial"}
+                    target="_blank"
+                  >
+                    <FaXTwitter size={50} />
+                  </Link>
                 </motion.div>
               </div>
             </div>
