@@ -16,14 +16,14 @@ export function OrbitingCirclesDemo() {
       {theme === "light" ? <Sun size={80} color="gold" /> : <Moon size={80} />}
 
       {/* Inner Circles */}
-      <OrbitingCircles
+      {/* <OrbitingCircles
         className="size-[30px] border-none bg-transparent"
         duration={20}
         delay={20}
         radius={80}
       >
         <IoLogoYoutube color="#FF0000" size={20} />
-      </OrbitingCircles>
+      </OrbitingCircles> */}
       <OrbitingCircles
         className="size-[30px] border-none bg-transparent"
         duration={20}
