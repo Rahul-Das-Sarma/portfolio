@@ -205,11 +205,11 @@ const About = (props: Props) => {
                 </div>
                 <div className="bg-card border border-border rounded-2xl p-6">
                   <p className="text-muted-foreground leading-relaxed">
-                    When I'm not coding, I enjoy exploring new technologies,
-                    contributing to open-source projects, and sharing knowledge
-                    with the developer community. I believe in continuous
-                    learning and am always excited to take on new challenges
-                    that push my boundaries.
+                    When I&apos;m not coding, I enjoy exploring new
+                    technologies, contributing to open-source projects, and
+                    sharing knowledge with the developer community. I believe in
+                    continuous learning and am always excited to take on new
+                    challenges that push my boundaries.
                   </p>
                 </div>
               </motion.div>
@@ -269,9 +269,9 @@ const About = (props: Props) => {
 
               {/* CTA */}
               <div className="bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950/20 dark:to-blue-950/20 border border-border rounded-2xl p-6 text-center space-y-4">
-                <h3 className="text-xl font-bold">Let's Work Together</h3>
+                <h3 className="text-xl font-bold">Let&apos;s Work Together</h3>
                 <p className="text-muted-foreground">
-                  I'm always interested in new opportunities and exciting
+                  I&apos;m always interested in new opportunities and exciting
                   projects.
                 </p>
                 <Link href="mailto:rahuldsofficial@gmail.com">
