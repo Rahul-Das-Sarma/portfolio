@@ -285,7 +285,7 @@ const TechSkill: React.FC = () => {
                     <div className="w-16 h-16 mx-auto flex items-center justify-center rounded-xl bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 group-hover:scale-110 transition-transform duration-300">
                       <tech.icon
                         className="w-8 h-8"
-                        style={{ color: tech.color }}
+                        {...({ style: { color: tech.color } } as any)}
                       />
                     </div>
                   </div>

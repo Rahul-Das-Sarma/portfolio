@@ -21,7 +21,6 @@ const About = (props: Props) => {
   const fadeInUp = {
     initial: { opacity: 0, y: 30 },
     animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6, ease: "easeOut" },
   };
 
   const staggerContainer = {
@@ -127,7 +126,11 @@ const About = (props: Props) => {
               className="lg:col-span-2 space-y-12"
             >
               {/* Introduction */}
-              <motion.div variants={fadeInUp} className="space-y-6">
+              <motion.div
+                variants={fadeInUp}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                className="space-y-6"
+              >
                 <h2 className="text-3xl font-bold font-serif">My Journey</h2>
                 <div className="prose prose-lg dark:prose-invert">
                   <p className="text-muted-foreground leading-relaxed">
@@ -148,7 +151,11 @@ const About = (props: Props) => {
               </motion.div>
 
               {/* Experience */}
-              <motion.div variants={fadeInUp} className="space-y-8">
+              <motion.div
+                variants={fadeInUp}
+                transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+                className="space-y-8"
+              >
                 <div className="flex items-center space-x-3">
                   <Briefcase className="w-6 h-6 text-purple-600" />
                   <h2 className="text-3xl font-bold font-serif">Experience</h2>
@@ -159,6 +166,7 @@ const About = (props: Props) => {
                     <motion.div
                       key={index}
                       variants={fadeInUp}
+                      transition={{ duration: 0.6, ease: "easeOut" }}
                       className="relative bg-card border border-border rounded-2xl p-6 hover:shadow-lg transition-all duration-300"
                     >
                       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
@@ -198,7 +206,11 @@ const About = (props: Props) => {
               </motion.div>
 
               {/* Personal Touch */}
-              <motion.div variants={fadeInUp} className="space-y-6">
+              <motion.div
+                variants={fadeInUp}
+                transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
+                className="space-y-6"
+              >
                 <div className="flex items-center space-x-3">
                   <Heart className="w-6 h-6 text-purple-600" />
                   <h2 className="text-3xl font-bold font-serif">Beyond Code</h2>
