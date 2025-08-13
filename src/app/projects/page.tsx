@@ -5,7 +5,6 @@ import { Github, ExternalLink, Code, Star } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { projectsData } from "./project-configs";
-import Header from "@/components/Header";
 
 type Props = {};
 
@@ -34,8 +33,6 @@ const Page = (props: Props) => {
 
   return (
     <div className="min-h-screen">
-      <Header />
-
       <section className="pt-32 pb-20">
         <div className="section-container">
           {/* Header */}
@@ -49,9 +46,9 @@ const Page = (props: Props) => {
               My <span className="gradient-text">Projects</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              A collection of projects showcasing my expertise in modern web
-              development, from full-stack applications to innovative frontend
-              solutions.
+              A collection of MERN stack projects showcasing my expertise in
+              full-stack development, from MongoDB and PostgreSQL databases to
+              React frontends with Node.js backends.
             </p>
           </motion.div>
 
@@ -115,24 +112,26 @@ const Page = (props: Props) => {
                     {/* Actions */}
                     <div className="flex items-center justify-between pt-4 border-t border-border">
                       <div className="flex space-x-3">
-                        <Link href={project.github} target="_blank">
-                          <motion.div
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.95 }}
-                            className="p-2 rounded-lg bg-accent hover:bg-accent/80 transition-colors"
-                          >
-                            <Github className="w-4 h-4" />
-                          </motion.div>
-                        </Link>
-                        <Link href={project.web} target="_blank">
-                          <motion.div
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.95 }}
-                            className="p-2 rounded-lg bg-purple-600 text-white hover:bg-purple-700 transition-colors"
-                          >
-                            <ExternalLink className="w-4 h-4" />
-                          </motion.div>
-                        </Link>
+                        <motion.a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.95 }}
+                          className="inline-flex p-2 rounded-lg bg-accent hover:bg-accent/80 transition-colors cursor-pointer"
+                        >
+                          <Github className="w-4 h-4" />
+                        </motion.a>
+                        <motion.a
+                          href={project.web}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.95 }}
+                          className="inline-flex p-2 rounded-lg bg-purple-600 text-white hover:bg-purple-700 transition-colors cursor-pointer"
+                        >
+                          <ExternalLink className="w-4 h-4" />
+                        </motion.a>
                       </div>
 
                       <div className="flex items-center space-x-1 text-yellow-500">
@@ -143,7 +142,7 @@ const Page = (props: Props) => {
                   </div>
 
                   {/* Hover Effect */}
-                  <div className="absolute inset-0 border-2 border-transparent group-hover:border-purple-500/20 rounded-2xl transition-all duration-500" />
+                  <div className="absolute inset-0 border-2 border-transparent group-hover:border-purple-500/20 rounded-2xl transition-all duration-500 pointer-events-none" />
                 </div>
               </motion.div>
             ))}
@@ -164,7 +163,11 @@ const Page = (props: Props) => {
                 I&apos;m always open to discussing new opportunities and
                 interesting projects.
               </p>
-              <Link href="mailto:rahuldsofficial@gmail.com">
+              <Link
+                href="https://twitter.com/rahul_dofficial"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}

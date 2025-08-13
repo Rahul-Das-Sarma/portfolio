@@ -29,7 +29,6 @@ import {
   Layers,
   Monitor,
 } from "lucide-react";
-import Header from "@/components/Header";
 import DotPattern from "@/components/magicui/dot-pattern";
 
 interface TechItem {
@@ -213,8 +212,6 @@ const TechSkill: React.FC = () => {
 
   return (
     <div className="min-h-screen">
-      <Header />
-
       <section className="pt-32 pb-20">
         <div className="section-container">
           {/* Header */}
@@ -228,7 +225,8 @@ const TechSkill: React.FC = () => {
               <span className="gradient-text">Technology</span> Stack
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              The tools and technologies I use to bring ideas to life
+              My comprehensive MERN stack expertise with PostgreSQL proficiency
+              and the technologies I use to build full-stack applications
             </p>
           </motion.div>
 

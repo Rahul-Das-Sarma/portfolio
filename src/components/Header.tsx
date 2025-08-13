@@ -1,19 +1,19 @@
+"use client";
 import React from "react";
 import { ModeToggle } from "./mode-toggle";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Code2, User, Briefcase, Mail } from "lucide-react";
+import { Code2, User, Briefcase, Twitter } from "lucide-react";
 
 type Props = {};
 
+const navItems = [
+  { name: "Home", href: "/", icon: Code2 },
+  { name: "About", href: "/about", icon: User },
+  { name: "Projects", href: "/projects", icon: Briefcase },
+  { name: "Skills", href: "/tech-skills", icon: Code2 },
+];
 const Header = (props: Props) => {
-  const navItems = [
-    { name: "Home", href: "/", icon: Code2 },
-    { name: "About", href: "/about", icon: User },
-    { name: "Projects", href: "/projects", icon: Briefcase },
-    { name: "Skills", href: "/tech-skills", icon: Code2 },
-  ];
-
   return (
     <motion.header
       initial={{ y: -100, opacity: 0 }}
@@ -37,7 +37,7 @@ const Header = (props: Props) => {
                   Rahul Das Sarma
                 </h1>
                 <p className="text-sm text-muted-foreground">
-                  Software Engineer
+                  MERN Stack Developer
                 </p>
               </div>
             </motion.div>
@@ -69,14 +69,18 @@ const Header = (props: Props) => {
               <ModeToggle />
             </motion.div>
 
-            <Link href="mailto:rahuldsofficial@gmail.com">
+            <Link
+              href="https://twitter.com/rahul_dofficial"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="hidden sm:flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25"
               >
-                <Mail className="w-4 h-4" />
-                <span>Contact</span>
+                <Twitter className="w-4 h-4" />
+                <span>Twitter</span>
               </motion.button>
             </Link>
           </div>

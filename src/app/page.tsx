@@ -1,14 +1,13 @@
 "use client";
-import Header from "@/components/Header";
 import { motion } from "framer-motion";
 import {
   ArrowDown,
   Github,
   Linkedin,
-  Mail,
   Download,
   ExternalLink,
 } from "lucide-react";
+import { FaXTwitter } from "react-icons/fa6";
 import Link from "next/link";
 import { OrbitingCirclesDemo } from "@/components/circle";
 import AnimatedGridPattern from "@/components/magicui/animated-grid-pattern";
@@ -39,13 +38,15 @@ export default function Home() {
       href: "https://www.linkedin.com/in/rahuldsofficial/",
       label: "LinkedIn",
     },
-    { icon: Mail, href: "mailto:rahuldsofficial@gmail.com", label: "Email" },
+    {
+      icon: FaXTwitter,
+      href: "https://twitter.com/rahul_dofficial",
+      label: "X",
+    },
   ];
 
   return (
     <div className="relative min-h-screen overflow-hidden">
-      <Header />
-
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-4">
         <div className="section-container">
@@ -79,7 +80,7 @@ export default function Home() {
                   transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
                   className="text-xl lg:text-2xl text-muted-foreground"
                 >
-                  Software Engineer & Frontend Developer
+                  MERN Stack Developer & Software Engineer
                 </motion.p>
               </motion.div>
 
@@ -88,14 +89,14 @@ export default function Home() {
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
                 className="text-lg leading-relaxed text-muted-foreground max-w-2xl"
               >
-                I specialize in building dynamic and responsive web applications
-                using
+                I specialize in building full-stack web applications using the
                 <span className="text-purple-600 font-semibold">
                   {" "}
-                  React, Next.js, and JavaScript
-                </span>
-                . With 3+ years of experience, I create innovative solutions
-                that solve real-world problems.
+                  MERN stack (MongoDB, Express.js, React, Node.js)
+                </span>{" "}
+                and PostgreSQL databases. With comprehensive expertise in modern
+                web development, I create innovative solutions that solve
+                real-world problems.
               </motion.p>
 
               {/* Social Links */}

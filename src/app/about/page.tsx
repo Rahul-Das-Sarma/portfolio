@@ -13,7 +13,6 @@ import {
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import Header from "@/components/Header";
 
 type Props = {};
 
@@ -38,12 +37,12 @@ const About = (props: Props) => {
       period: "2023 - Present",
       location: "India",
       description:
-        "Leading a frontend team and building full-stack applications that solve real-world problems. Mentoring junior developers and implementing best practices.",
+        "Leading a development team in building MERN stack applications that solve real-world problems. Mentoring junior developers in full-stack development and implementing best practices.",
       highlights: [
-        "Team Leadership",
-        "Full-Stack Development",
-        "Mentoring",
-        "Architecture Design",
+        "MERN Stack Development",
+        "PostgreSQL & MongoDB",
+        "Full-Stack Architecture",
+        "Node.js & Express.js",
       ],
     },
     {
@@ -52,12 +51,12 @@ const About = (props: Props) => {
       period: "2021 - 2023",
       location: "India",
       description:
-        "Developed microfrontends and telecom products with focus on scalable and innovative solutions. Worked with modern React ecosystem and cloud technologies.",
+        "Developed MERN stack applications and telecom products with focus on scalable and innovative solutions. Built full-stack applications using MongoDB, Express.js, React, and Node.js.",
       highlights: [
-        "Microfrontends",
-        "Telecom Solutions",
-        "React Ecosystem",
-        "Scalable Architecture",
+        "MERN Stack Applications",
+        "PostgreSQL & MongoDB",
+        "React & Node.js",
+        "Database Integration",
       ],
     },
   ];
@@ -67,11 +66,11 @@ const About = (props: Props) => {
     {
       icon: Mail,
       label: "Email",
-      value: "rahuldsofficial@gmail.com",
-      href: "mailto:rahuldsofficial@gmail.com",
+      value: "rahuldas35748@gmail.com",
+      href: "mailto:rahuldas35748@gmail.com",
     },
-    { icon: Calendar, label: "Experience", value: "3+ Years" },
-    { icon: Code, label: "Focus", value: "Frontend & Full-Stack" },
+    { icon: Calendar, label: "Experience", value: "MERN Stack Specialist" },
+    { icon: Code, label: "Focus", value: "Full-Stack MERN Development" },
   ];
 
   const socialLinks = [
@@ -89,7 +88,7 @@ const About = (props: Props) => {
     },
     {
       icon: Mail,
-      href: "mailto:rahuldsofficial@gmail.com",
+      href: "mailto:rahuldas35748@gmail.com",
       label: "Email",
       color: "text-red-500",
     },
@@ -97,8 +96,6 @@ const About = (props: Props) => {
 
   return (
     <div className="min-h-screen">
-      <Header />
-
       <section className="pt-32 pb-20">
         <div className="section-container">
           {/* Header */}
@@ -112,8 +109,8 @@ const About = (props: Props) => {
               About <span className="gradient-text">Me</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Passionate about creating digital experiences that make a
-              difference
+              Passionate MERN stack developer creating full-stack digital
+              experiences that make a difference
             </p>
           </motion.div>
 
@@ -134,17 +131,19 @@ const About = (props: Props) => {
                 <h2 className="text-3xl font-bold font-serif">My Journey</h2>
                 <div className="prose prose-lg dark:prose-invert">
                   <p className="text-muted-foreground leading-relaxed">
-                    I am a self-taught developer who began my coding journey
-                    through Udemy in 2019. What started as curiosity quickly
-                    became a passion as I mastered React, JavaScript, MongoDB,
-                    Express, and Node.js - technologies that laid the foundation
-                    for my career.
+                    I am a self-taught MERN stack developer who began my coding
+                    journey through Udemy in 2019. What started as curiosity
+                    quickly became a passion as I mastered the complete MERN
+                    stack - MongoDB, Express.js, React, and Node.js - along with
+                    PostgreSQL, technologies that form the foundation of modern
+                    full-stack development.
                   </p>
                   <p className="text-muted-foreground leading-relaxed">
-                    Today, I specialize in building dynamic, responsive web
-                    applications with a focus on user experience and
-                    performance. I believe in writing clean, maintainable code
-                    and staying up-to-date with the latest technologies and best
+                    Today, I specialize in building full-stack web applications
+                    using the MERN stack and PostgreSQL databases, with a focus
+                    on scalable architecture, user experience, and performance
+                    optimization. I believe in writing clean, maintainable code
+                    and staying current with the latest full-stack development
                     practices.
                   </p>
                 </div>
@@ -286,7 +285,11 @@ const About = (props: Props) => {
                   I&apos;m always interested in new opportunities and exciting
                   projects.
                 </p>
-                <Link href="mailto:rahuldsofficial@gmail.com">
+                <Link
+                  href="https://twitter.com/rahul_dofficial"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
