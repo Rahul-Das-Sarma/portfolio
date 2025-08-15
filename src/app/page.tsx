@@ -137,14 +137,19 @@ export default function Home() {
                     <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </motion.button>
                 </Link>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="group flex items-center space-x-3 px-8 py-4 border-2 border-border rounded-full font-semibold hover:bg-accent transition-all duration-300"
+                <a
+                  href="/Rahul_Das_Sarma_Resume.pdf"
+                  download="Rahul_Das_Sarma_Resume.pdf"
                 >
-                  <Download className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
-                  <span>Download CV</span>
-                </motion.button>
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="group flex items-center space-x-3 px-8 py-4 border-2 border-border rounded-full font-semibold hover:bg-accent transition-all duration-300"
+                  >
+                    <Download className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
+                    <span>Download CV</span>
+                  </motion.button>
+                </a>
               </motion.div>
             </div>
 
