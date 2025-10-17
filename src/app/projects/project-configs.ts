@@ -9,4 +9,14 @@ export const projectsData = [
     web: "https://lotion-kappa.vercel.app/",
     github: "https://github.com/Rahul-Das-Sarma/Lotion",
   },
+  {
+    id: 2,
+    icon: "/thumbnail_creator.png",
+    title: "Thumbnail Creator",
+    description:
+      "A powerful Next.js application for creating custom thumbnails with text overlays and background removal. Features project management, user authentication, and a credit-based system for usage tracking.",
+    tech: "NextJS, TypeScript, Prisma, OAuth, Razorpay",
+    web: "https://thumbnail-creator-chi.vercel.app/",
+    github: "https://github.com/Growthxdevs/Thumbnail_creator",
+  },
 ];
