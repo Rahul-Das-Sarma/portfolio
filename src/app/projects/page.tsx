@@ -112,16 +112,18 @@ const Page = (props: Props) => {
                     {/* Actions */}
                     <div className="flex items-center justify-between pt-4 border-t border-border">
                       <div className="flex space-x-3">
-                        <motion.a
-                          href={project.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          whileHover={{ scale: 1.1 }}
-                          whileTap={{ scale: 0.95 }}
-                          className="inline-flex p-2 rounded-lg bg-accent hover:bg-accent/80 transition-colors cursor-pointer"
-                        >
-                          <Github className="w-4 h-4" />
-                        </motion.a>
+                        {project.github ? (
+                          <motion.a
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.95 }}
+                            className="inline-flex p-2 rounded-lg bg-accent hover:bg-accent/80 transition-colors cursor-pointer"
+                          >
+                            <Github className="w-4 h-4" />
+                          </motion.a>
+                        ) : null}
                         <motion.a
                           href={project.web}
                           target="_blank"
