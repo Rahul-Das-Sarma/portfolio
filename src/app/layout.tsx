@@ -1,44 +1,59 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
-import { UiPlayer } from "@/components/ui-player";
 import Header from "@/components/Header";
+import { SiteFooter } from "@/components/site-footer";
+import { profile } from "@/lib/site";
 
-const fontSans = Inter({
+const fontSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-sans",
+  display: "swap",
 });
 
-const fontSerif = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-playfair",
-});
+const description =
+  "Senior Frontend Developer working with React, Next.js, and Node.js. Portfolio of shipped products including AgentGuard, UI Atelier, Lotion, and Thumbnail Creator.";
 
 export const metadata: Metadata = {
-  title: "Rahul Das Sarma - MERN Stack Developer & Software Engineer",
-  description:
-    "Experienced MERN stack developer specializing in MongoDB, Express.js, React, and Node.js. Proficient with PostgreSQL databases and building innovative full-stack solutions with comprehensive expertise in modern web development.",
+  metadataBase: new URL(profile.site),
+  title: "Rahul Das Sarma | Senior Frontend Developer",
+  description,
   keywords: [
-    "MERN Stack Developer",
-    "Software Engineer",
-    "MongoDB",
-    "PostgreSQL",
-    "Express.js",
-    "React",
+    "Senior Frontend Developer",
+    "React Developer",
+    "Next.js",
     "Node.js",
-    "Full Stack Developer",
-    "JavaScript",
-    "Web Development",
+    "Full-Stack Developer",
+    "TypeScript",
+    "Rahul Das Sarma",
   ],
-  authors: [{ name: "Rahul Das Sarma" }],
+  authors: [{ name: profile.name, url: profile.site }],
   openGraph: {
-    title: "Rahul Das Sarma - MERN Stack Developer",
-    description:
-      "Experienced MERN stack developer specializing in MongoDB, Express.js, React, and Node.js. Proficient with PostgreSQL for full-stack web development.",
+    title: "Rahul Das Sarma | Senior Frontend Developer",
+    description,
     type: "website",
+    url: profile.site,
   },
+  twitter: {
+    card: "summary",
+    title: "Rahul Das Sarma | Senior Frontend Developer",
+    description,
+  },
+};
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: profile.name,
+  jobTitle: profile.role,
+  url: profile.site,
+  address: {
+    "@type": "PostalAddress",
+    addressCountry: "India",
+  },
+  sameAs: [profile.github, profile.linkedin, profile.x],
 };
 
 export default function RootLayout({
@@ -48,26 +63,27 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head />
       <body
         className={cn(
           fontSans.variable,
-          fontSerif.variable,
-          "font-sans antialiased relative overflow-x-hidden min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-950 dark:to-slate-900"
+          "min-h-screen overflow-x-hidden bg-background font-sans text-foreground antialiased"
         )}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+          <a
+            href="#top"
+            className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:bg-foreground focus:px-3 focus:py-2 focus:text-background"
+          >
+            Skip to content
+          </a>
           <Header />
           {children}
-          <div className="fixed left-1/2 bottom-8 transform -translate-x-1/2 z-50">
-            <UiPlayer />
-          </div>
+          <SiteFooter />
         </ThemeProvider>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
       </body>
     </html>
   );
